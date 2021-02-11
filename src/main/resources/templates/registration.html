@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration</title>
+    <link th:href="@{/css/master.css}" rel="stylesheet" href="../static/css/master.css"/>
+    <link th:href="@{/css/color/color-1.css}" rel="stylesheet" href="../static/css/color-1.css"/>
+   	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+</head>
+<body>
+<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" th:action="@{registration}" method="post" th:object="${user}">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+					
+					<span class="login100-form-title p-b-34 p-t-27">
+						Registration
+					</span>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" th:field="*{firstName}" placeholder="First Name">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" th:field="*{lastName}" placeholder="Last Name">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" th:field="*{email}" placeholder="Email">
+						<span class="focus-input100" data-placeholder="&#xf15a;"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" th:field="*{password}" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Register
+						</button>
+					</div><br>
+					<div th:if="${param.success}">
+						<div class="alert alert-success">
+							You've successfully registered to our awesome application!
+						</div>
+					</div>
+					<samp>Already registered? <a href="/" th:href="@{/login}">Login</a></samp>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>
