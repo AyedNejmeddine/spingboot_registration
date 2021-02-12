@@ -1,16 +1,41 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
    <head>
       <meta charset="UTF-8" />
-      <title>Page de teste</title>
-      <link th:href="@{/css/master.css}" rel="stylesheet" href="../static/css/master.css"/>
-   	<link th:href="@{/css/color/color-1.css}" rel="stylesheet" href="../static/css/color-1.css"/>
+      <title>Welcome to our applcation</title>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
    </head>
    <body>
-      <h1 >Welcome to our applcation</h1>
-      <p>test</p>
+   	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<div id="navbar" class="collapse navbar-collapse">
+						<a class="navbar-brand" href="#" th:href="@{/}">Registration and Login Module</a>
+						<a sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a></li>
+				</div>
+			</div>
+		</div>
+	</nav>
       
-      
+      <div class="container">
+		<h1>Registration and Login with Spring Boot, Spring Security,
+			Thymeleaf, Hibernate and MySQL</h1>
+		Welcome <span sec:authentication="principal.username"> User</span>
+	</div>
                  
    </body>
     
