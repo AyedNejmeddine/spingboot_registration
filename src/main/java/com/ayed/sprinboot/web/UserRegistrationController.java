@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ayed.sprinboot.service.UserService;
+import com.ayed.sprinboot.service.UserServiceImpl;
 import com.ayed.sprinboot.web.dto.UserRegistrationDto;
 
 
@@ -13,9 +13,9 @@ import com.ayed.sprinboot.web.dto.UserRegistrationDto;
 @RequestMapping("/registration")
 public class UserRegistrationController {
 
-	private UserService userService;
+	private UserServiceImpl userService;
 
-	public UserRegistrationController(UserService userService) {
+	public UserRegistrationController(UserServiceImpl userService) {
 		super();
 		this.userService = userService;
 	}

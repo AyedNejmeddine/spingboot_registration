@@ -51,6 +51,10 @@ public class User {
 		this.roles = roles;
 	}
 
+	public User() {
+		super();
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
